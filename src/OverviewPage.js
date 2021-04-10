@@ -12,19 +12,19 @@ function OverviewPage() {
                 
                 <view className="OverviewPageButtonContainer">
 
-                    <Link to="/lessons" style={{ textDecoration: 'none' }}>
+                    <Link to="/code" style={{ textDecoration: 'none' }}>
                         <div className="OverviewPageButton">
                             Javascript
                         </div>
                     </Link>
 
-                    <Link to="/lessons" style={{ textDecoration: 'none' }}>
+                    <Link to="/code" style={{ textDecoration: 'none' }}>
                         <div className="OverviewPageButton">
                             NA
                         </div>
                     </Link>
 
-                    <Link to="/lessons" style={{ textDecoration: 'none' }}>
+                    <Link to="/code" style={{ textDecoration: 'none' }}>
                         <div className="OverviewPageButton">
                             NA
                         </div>

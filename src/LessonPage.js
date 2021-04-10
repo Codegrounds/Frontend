@@ -15,6 +15,8 @@ function LessonPage(props) {
 
             <div style={{display: 'flex', flexDirection: 'row', width: '100%', height: '100%'}}>
                 <LessonNavSidebar/>
+                
+                
 
                 <h1>
                     Lesson: {lessonName}

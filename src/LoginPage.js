@@ -9,9 +9,9 @@ function LoginPage() {
             <view className="LoginPageButtonContainer">
 
                 <Link to="/overview" style={{ textDecoration: 'none' }}>
-                    <div className="LoginPageButton">
+                    <text className="LoginPageButton">
                         Login
-                    </div>
+                    </text>
                 </Link>
 
 

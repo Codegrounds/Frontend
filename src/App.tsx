@@ -14,9 +14,9 @@ function App() {
       <Router>
           <GlobalProvider>
               <Switch>
-                  <Route path ='/code' exact component={CodingPage}/>
                   <Route path ='/' exact component={LoginPage}/>
-                  <Route path ='/overview' exact component={CodingPage}/>
+                  <Route path ='/code' exact component={CodingPage}/>
+                  <Route path ='/overview' exact component={OverviewPage}/>
                   <Route path ='/lesson/:lessonID' component={LessonPage}/>
               </Switch>
           </GlobalProvider>

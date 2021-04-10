@@ -7,8 +7,6 @@
 
   justify-content: flex-start;
   align-items: flex-start;
-
-  text-align: flex-start;
 }
 
 .OverviewPageCourses {
@@ -16,10 +14,9 @@
   font-size: 60px;
   font-weight: bold;
   color: black;
-  text-align: flex-start;
   margin-top: 5vh;
   margin-left: 10vw;
-  
+
   text-decoration-line: underline;
 
 
@@ -46,7 +43,7 @@
 }
 
 .OverviewPageButtonContainer {
-  
+
   width: 35vw;
   height: 40vh;
   background-color: rgb(23, 52, 82);

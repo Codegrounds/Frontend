@@ -1,0 +1,14 @@
+{
+	"editor.formatOnSave": true,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"files.insertFinalNewline": true,
+	"files.eol": "\n",
+	"editor.tabSize": 4,
+	"search.exclude": {
+		"**/.yarn": true,
+		"**/.pnp.*": true
+	},
+	"typescript.tsdk": ".yarn/sdks/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true
+}

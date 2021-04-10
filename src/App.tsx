@@ -6,7 +6,7 @@ import OverviewPage from "./OverviewPage";
 import GlobalProvider from "./GlobalContext";
 import CodingPage from "./CodingPage";
 import LoginPage from "./LoginPage";
-
+import LessonsPage from "./LessonsPage";
 
 function App() {
   return (
@@ -14,8 +14,9 @@ function App() {
           <GlobalProvider>
               <Switch>
                   <Route path ='/' exact component={CodingPage}/>
-                  <Route path ='/lessons' component={LessonPage}/>
                   <Route path ='/login' exact component={LoginPage}/>
+                  <Route path ='/overview' exact component={CodingPage}/>
+                  <Route path ='/lesson/:lessonID' component={LessonPage}/>
               </Switch>
           </GlobalProvider>
       </Router>

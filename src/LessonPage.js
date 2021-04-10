@@ -1,11 +1,17 @@
-import React from 'react';
 import './App.css';
+import {useContext} from "react";
+import {LessonsContext} from "./LessonsContext";
 
-function LessonPage() {
+function LessonPage(props) {
+
+    const {lessonID} = props.match.params
+    const [lessons] = useContext(LessonsContext)
+    const lessonName = lessons[lessonID]
+
     return (
         <div className="LessonPage">
             <h1>
-                Lessons
+                Lesson: {lessonName}
             </h1>
         </div>
     );

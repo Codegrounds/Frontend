@@ -1,17 +1,23 @@
 import Editor from "@monaco-editor/react";
 import React from 'react';
 import './App.css';
-import LessonNavSidebar from "./LessonNavSidebar";
 
 function CodingPage() {
     return (
-        <Editor
-            theme="vs-dark"
-            width="90vw"
-            height="100%"
-            defaultLanguage="javascript"
-            defaultValue="// some comment"
-        />
+        <div>
+            <div className="CodingTopBar">
+                <div className="CodingTopButton" onClick={() => console.log('Run')}>Run</div>
+                <div className="CodingTopButton" onClick={() => console.log('Test')}>Test</div>
+                <div className="CodingTopButton" onClick={() => console.log('Submit')}>Submit</div>
+            </div>
+            <Editor
+                theme="vs-dark"
+                width="90vw"
+                height="95%"
+                defaultLanguage="javascript"
+                defaultValue="// some comment"
+            />
+        </div>
     );
 }
 

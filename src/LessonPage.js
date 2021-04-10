@@ -15,7 +15,7 @@ function LessonPage(props) {
         <div className="LessonPage">
 
             <div style={{display: 'flex', flexDirection: 'row', width: '100%', height: '100%'}}>
-                <LessonNavSidebar/>
+                <LessonNavSidebar currentLessonID={lessonID}/>
 
 
                 {lesson.type === 'code' ? <CodingPage/> :

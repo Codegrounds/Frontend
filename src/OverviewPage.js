@@ -5,15 +5,33 @@ import {Link} from "react-router-dom";
 function OverviewPage() {
     return (
         <div className="OverviewPage">
-            <h1>
-                Courses
 
-                <Link to="/lessons" style={{ textDecoration: 'none' }}>
-                    <div className="LessonPageButton">
-                        Javascript
-                    </div>
-                </Link>
-            </h1>
+                <text className="OverviewPageCourses">
+                    Courses
+                </text>
+                
+                <view className="OverviewPageButtonContainer">
+
+                    <Link to="/lessons" style={{ textDecoration: 'none' }}>
+                        <div className="OverviewPageButton">
+                            Javascript
+                        </div>
+                    </Link>
+
+                    <Link to="/lessons" style={{ textDecoration: 'none' }}>
+                        <div className="OverviewPageButton">
+                            NA
+                        </div>
+                    </Link>
+
+                    <Link to="/lessons" style={{ textDecoration: 'none' }}>
+                        <div className="OverviewPageButton">
+                            NA
+                        </div>
+                    </Link>
+
+                </view>
+
         </div>
     );
 }

@@ -6,22 +6,22 @@ function LoginPage() {
     return (
         <div className="LoginPage">
 
-                <view className="LoginPageButtonContainer">
+            <view className="LoginPageButtonContainer">
 
-                    <Link to="/overview" style={{ textDecoration: 'none' }}>
-                        <div className="LoginPageButton">
-                            Login
-                        </div>
+                <Link to="/overview" style={{ textDecoration: 'none' }}>
+                    <div className="LoginPageButton">
+                        Login
+                    </div>
+                </Link>
+
+
+                <Link to="/create" style={{ textDecoration: 'none' }}>
+                    <div className="LoginPageButton">
+                        Create Account
+                    </div>
                     </Link>
 
-
-                    <Link to="/create" style={{ textDecoration: 'none' }}>
-                        <div className="LoginPageButton">
-                            Create Account
-                        </div>
-                    </Link>
-
-                </view>
+            </view>
 
                 
         </div>

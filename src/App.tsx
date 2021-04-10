@@ -18,6 +18,7 @@ function App() {
                   <Route path ='/code' exact component={CodingPage}/>
                   <Route path ='/overview' exact component={OverviewPage}/>
                   <Route path ='/lesson/:lessonID' component={LessonPage}/>
+                  <Route path ='/lessons' exact component={LessonsPage}/>
               </Switch>
           </GlobalProvider>
       </Router>

@@ -132,6 +132,23 @@
   align-items: center;
 }
 
+.LessonButton {
+  width: 40vh;
+  height: 100px;
+  background-color: slategrey;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-decoration: None;
+  border-radius: 20px;
+
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .LessonNavSidebar {
   background-color: #454a4a;
@@ -143,4 +160,5 @@
   align-items: center;
   justify-content: flex-start;
 
+  border-right: 1px #646464 solid;
 }

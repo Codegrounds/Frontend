@@ -1,6 +1,8 @@
 import './App.css';
-import {useContext} from "react";
+import React, {useContext} from "react";
 import {LessonsContext} from "./LessonsContext";
+import LessonNavSidebar from "./LessonNavSidebar";
+import Editor from "@monaco-editor/react";
 
 function LessonPage(props) {
 
@@ -10,9 +12,14 @@ function LessonPage(props) {
 
     return (
         <div className="LessonPage">
-            <h1>
-                Lesson: {lessonName}
-            </h1>
+
+            <div style={{display: 'flex', flexDirection: 'row', width: '100%', height: '100%'}}>
+                <LessonNavSidebar/>
+
+                <h1>
+                    Lesson: {lessonName}
+                </h1>
+            </div>
         </div>
     );
 }

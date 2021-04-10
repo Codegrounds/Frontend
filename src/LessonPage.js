@@ -18,11 +18,11 @@ function LessonPage(props) {
                 <LessonNavSidebar currentLessonID={lessonID}/>
 
 
-                {lesson.type === 'code' ? <CodingPage/> :
+                {lesson.type === 'code' ? <CodingPage lesson={lesson}/> :
                         <div style={{display: 'flex', flexDirection: 'column', width: '100%', height: '100%'}}>
-                            <h1>
-                                Lesson: {lesson.name}
-                            </h1>
+                            <div className="LessonHeader">
+                                {lesson.name}
+                            </div>
                             {lesson.page}
                         </div>
                 }

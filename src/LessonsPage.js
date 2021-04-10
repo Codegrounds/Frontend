@@ -16,7 +16,7 @@ function LessonsPage() {
             {Object.keys(lessons).map(lessonID => (
                 <Link to={'/lesson/'+lessonID} style={{textDecoration: 'none', color: 'black'}}>
                     <div className={"LessonButton"}>
-                        <p>{lessons[lessonID]}</p>
+                        <p>{lessons[lessonID].name}</p>
                     </div>
                 </Link>
             ))}

@@ -1,28 +1,30 @@
 import {useState, createContext} from 'react';
+import {generateLesson} from "./LessonGeneration";
 
 export const LessonsContext = createContext();
 
 export const LessonsProvider = (props) => {
-    
+
     const toID = (lessonName) => { // replaces spaces with dashes and makes lowercase
         return lessonName.replace(/\s+/g, '-').toLowerCase();
     }
 
     const toDict = (nameList) => {
         const dict = {}
-        nameList.forEach(lessonName => {
-            dict[toID(lessonName)] = lessonName
+        nameList.forEach(lessonData => {
+            let id = toID(lessonData.name)
+            dict[id] = {name: lessonData.name, type: lessonData.type ? lessonData.type : 'lesson', page: generateLesson(lessonData.name)}
         })
         return dict;
     }
 
     const [lessons, setLessons] = useState(toDict([
-        'Lesson 1',
-        'Lesson 2',
-        'Lesson 3',
-        'Debug',
-        'Unit Test',
+        {name: 'Lesson 1'},
+        {name: 'Lesson 2'},
+        {name: 'Lesson 3'},
+        {name: 'Debug', type: 'code'},
+        {name: 'Unit Test'},
     ]))
-    
+
     return <LessonsContext.Provider value={[lessons, setLessons]}>{props.children}</LessonsContext.Provider>;
 }

@@ -13,7 +13,7 @@ function LessonNavSidebar() {
         <div className="LessonNavSidebar">
             {Object.keys(lessons).map(lessonID => (
                 <Link to={'/lesson/'+lessonID} style={{textDecoration: 'none', color: 'white'}}>
-                    <p>{lessons[lessonID]}</p>
+                    <p>{lessons[lessonID].name}</p>
                 </Link>
             ))}
         </div>

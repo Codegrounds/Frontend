@@ -23,13 +23,14 @@
 }
 
 .LessonPageButton {
-  width: 500px;
+  width: 400px;
   height: 100px;
   background-color: slategrey;
   font-size: 20px;
   font-weight: bold;
   color: black;
   text-decoration: None;
+  border-radius: 20px;
 
   display: flex;
   justify-content: center;

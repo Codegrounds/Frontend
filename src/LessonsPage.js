@@ -20,7 +20,7 @@ function LessonsPage() {
                     {Object.keys(lessons).slice(0, 3).map(lessonID => (
                         <Link to={'/lesson/'+lessonID} style={{textDecoration: 'none', color: 'black'}}>
                             <div className={"LessonButton"}>
-                                <p>{lessons[lessonID]}</p>
+                                <p>{lessons[lessonID].name}</p>
                             </div>
                         </Link>
                     ))}
@@ -30,7 +30,7 @@ function LessonsPage() {
                     {Object.keys(lessons).slice(3, 5).map(lessonID => (
                         <Link to={'/lesson/'+lessonID} style={{textDecoration: 'none', color: 'black'}}>
                             <div className={"LessonButton"}>
-                                <p>{lessons[lessonID]}</p>
+                                <p>{lessons[lessonID].name}</p>
                             </div>
                         </Link>
                     ))}

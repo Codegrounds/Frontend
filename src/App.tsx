@@ -13,10 +13,11 @@ function App() {
       <Router>
           <GlobalProvider>
               <Switch>
-                  <Route path ='/' exact component={CodingPage}/>
-                  <Route path ='/login' exact component={LoginPage}/>
-                  <Route path ='/overview' exact component={CodingPage}/>
+                  <Route path ='/' exact component={LoginPage}/>
+                  <Route path ='/code' exact component={CodingPage}/>
+                  <Route path ='/overview' exact component={OverviewPage}/>
                   <Route path ='/lesson/:lessonID' component={LessonPage}/>
+                  <Route path ='/lessons' component={LessonsPage}/>
               </Switch>
           </GlobalProvider>
       </Router>

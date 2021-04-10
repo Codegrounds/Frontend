@@ -9,22 +9,22 @@ function OverviewPage() {
                 <text className="OverviewPageCourses">
                     Courses
                 </text>
-                
+
                 <view className="OverviewPageButtonContainer">
 
-                    <Link to="/code" style={{ textDecoration: 'none' }}>
+                    <Link to="/lessons" style={{ textDecoration: 'none' }}>
                         <div className="OverviewPageButton">
                             Javascript
                         </div>
                     </Link>
 
-                    <Link to="/code" style={{ textDecoration: 'none' }}>
+                    <Link to="/lessons" style={{ textDecoration: 'none' }}>
                         <div className="OverviewPageButton">
                             NA
                         </div>
                     </Link>
 
-                    <Link to="/code" style={{ textDecoration: 'none' }}>
+                    <Link to="/lessons" style={{ textDecoration: 'none' }}>
                         <div className="OverviewPageButton">
                             NA
                         </div>

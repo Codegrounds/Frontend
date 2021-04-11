@@ -9,18 +9,16 @@ export function Loader(props) {
         loadLessons()
     }, [])
 
-    /*const lessonIDs = [
-        'lesson_2'
-    ]*/
-
     const toChapters = (lessonsDict) => {
         const dict = {}
         Object.keys(lessonsDict).forEach(lessonID => {
             let lessonData = lessonsDict[lessonID]
-            if (dict[lessonData.chapter] === undefined) {
-                dict[lessonData.chapter] = [lessonData]
+            let chapter = lessonData.chapter.substring(0, lessonData.chapter.lastIndexOf('.'));
+            console.log(chapter)
+            if (dict[chapter] === undefined) {
+                dict[chapter] = [lessonData]
             } else {
-                dict[lessonData.chapter] = [...dict[lessonData.chapter], lessonData]
+                dict[chapter] = [...dict[chapter], lessonData]
             }
         })
         return dict;
@@ -41,7 +39,7 @@ export function Loader(props) {
             dict[lessonID] = {id: lessonID, name: data.name, chapter: data.chapter, type: data.type, markdown: data.markdown,
                 shell_code: data.shell_code, expected_output: data.expected_output}
         }
-
+        
         setLessons(dict)
         setChapters(toChapters(dict))
     }

@@ -15,13 +15,13 @@ function OverviewPage() {
 				<Link to="/lessons" style={{ textDecoration: 'none' }}>
 					<div className="OverviewPageButton">
 						Javascript
-                        </div>
+					</div>
 				</Link>
 
 				<Link to="/lessons" style={{ textDecoration: 'none' }}>
 					<div className="OverviewPageButton">
 						NA
-                        </div>
+					</div>
 				</Link>
 
 				<Link to="/lessons" style={{ textDecoration: 'none' }}>

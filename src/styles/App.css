@@ -325,7 +325,7 @@
 	align-items: center;
 	justify-content: space-evenly;
 	border-radius: 5px;
-	
+
 }
 
 .CheckContainer {
@@ -343,7 +343,7 @@
 .CheckText {
 
 	display: flex;
-	color: white; 
+	color: white;
 	height: 18%;
 	font-size: large;
 	align-items: center;

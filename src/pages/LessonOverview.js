@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import 'codegrounds/styles/App.css';
 import { Link } from "react-router-dom";
 import { LessonsContext } from "codegrounds/state";
+import arrowImg from "codegrounds/images/BackArrowDark.png";
 
 function LessonOverview() {
 
@@ -13,6 +14,10 @@ function LessonOverview() {
 			<h1>
 				Lessons
             </h1>
+
+			<Link to={'/overview/'}>
+				<img src={arrowImg} style={{position: 'fixed', top: 10, left: 10, width:40, height: 40, cursor: 'pointer', paddingLeft: 10, paddingTop: 10}} alt="back arrow"/>
+			</Link>
 
 			{Object.keys(chapters).map(chapter => {
 				let lessons = chapters[chapter];

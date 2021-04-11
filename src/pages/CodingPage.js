@@ -69,7 +69,7 @@ function CodingPage({ lesson }) {
 
 	const runFile = async () => {
 		setConsoleOutput(consoleOutput.concat(`[${new Date().toLocaleTimeString()}] Running File >\n`))
-		const response = await fetch('https://api-codegrounds.atale.me/v1/runner/javascript', {
+		const response = await fetch('https://codegrounds.atale.me/v1/runner/javascript', {
 			method: 'POST',
 			body: JSON.stringify({
 				transaction_id: v4(),
@@ -86,7 +86,7 @@ function CodingPage({ lesson }) {
 
 	const testFile = async () => {
 		setConsoleOutput(consoleOutput.concat(`[${new Date().toLocaleTimeString()}] Testing File >\n`))
-		const response = await fetch('https://api-codegrounds.atale.me/v1/validate/javascript', {
+		const response = await fetch('https://codegrounds.atale.me/v1/validate/javascript', {
 			method: 'POST',
 			body: JSON.stringify({
 				transaction_id: v4(),
@@ -103,7 +103,7 @@ function CodingPage({ lesson }) {
 	}
 
 	const submitFile = async () => {
-		const response = await fetch('https://api-codegrounds.atale.me/v1/validate/javascript', {
+		const response = await fetch('https://codegrounds.atale.me/v1/validate/javascript', {
 			method: 'POST',
 			body: JSON.stringify({
 				transaction_id: v4(),

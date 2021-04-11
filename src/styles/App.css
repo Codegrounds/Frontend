@@ -35,7 +35,7 @@
 .OverviewPageButtonContainer {
 	width: 35vw;
 	height: 40vh;
-	background-color: rgb(23, 52, 82);
+	background-color: #454a4a;
 	font-size: 20px;
 	font-weight: bold;
 	color: black;
@@ -82,13 +82,13 @@
 	align-items: center;
 	flex-direction: column;
 	border-radius: 20px;
-	background-color: rgb(23, 52, 82);
+	background-color: #454a4a;
 }
 
 .LoginPageButton {
 	width: 30vw;
 	height: 15vh;
-	background-color: slategrey;
+	background-color: #9d9d9d;
 	font-size: 20px;
 	font-weight: bold;
 	color: black;
@@ -125,7 +125,7 @@
 	flex-direction: column;
 	justify-self: center;
 	border-radius: 20px;
-	background-color: rgb(54, 60, 64);
+	background-color: #454a4a;
 	justify-content: space-around;
 	align-items: center;
 	text-align: center;
@@ -357,7 +357,6 @@
 	height: 100%;
 
 	background-color: #454a4a;
-	border-radius: 5;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;

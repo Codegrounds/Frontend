@@ -45,11 +45,11 @@ export function LoginFields() {
 			</h1>
 			<div className="LoginPageContainer">
 				<form onSubmit={handleSubmit}>
-					<div style={{display:'flex',flexDirection:'row', alignItems:'center', color: 'white'}}>
+					<div style={{display:'flex',flexDirection:'row', alignItems:'center', justifyContent: 'flex-end', color: 'white'}}>
 						Username:
                   		<input className="LoginInput" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
 					</div>
-					<div style={{color:'white'}}>
+					<div style={{display:'flex',flexDirection:'row', justifyContent: 'flex-end',alignItems:'center', color: 'white'}}>
 						Password:
                     	<input className="LoginInput" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 					</div>

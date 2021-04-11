@@ -14,7 +14,7 @@ export function LessonNavSidebar({ currentLessonID }) {
 			{Object.keys(lessons).map(lessonID => (
 				<Link to={'/lesson/' + lessonID}
 					style={{ textDecoration: 'none', color: (currentLessonID === lessonID) ? 'yellow' : 'white', fontWeight: (currentLessonID === lessonID) ? 'bold' : 'normal' }}>
-					<p style={{marginTop: 20}}>{lessons[lessonID].name}</p>
+					<p style={{ marginTop: 20 }}>{lessons[lessonID].name}</p>
 				</Link>
 			))}
 		</div>

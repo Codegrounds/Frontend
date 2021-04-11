@@ -258,9 +258,10 @@
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	width: 75vw;
-	height: 100vh;
-	background-color: green;
+	width: 40vw;
+	height: 65vh;
+	background-color: #454a4a;
+	border-radius: 5px;
 }
 
 .MultipleChoiceInnerContainer {
@@ -268,10 +269,28 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	width: 100px;
-	height: 50px;
-	background-color: blue;
+	align-items: flex-start;
+	width: 98%;
+	height: 18%;
+	background-color: #646464;
+	border-radius: 5px;
+}
+
+.Question {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+	height: 18%;
+	text-align: left;
+	margin-left: 5%;
+	color: white;
+	font-size: large;
+	border-bottom-width: 10px;
+	border-color: black;
+	
+	
 }
 
 .LessonMarkdownPage {

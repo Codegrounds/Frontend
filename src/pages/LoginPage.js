@@ -28,7 +28,6 @@ function LoginPage() {
 
 			</div>
 
-
 		</div>
 	);
 }

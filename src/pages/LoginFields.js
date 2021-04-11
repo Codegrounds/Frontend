@@ -1,15 +1,41 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import 'codegrounds/styles/App.css';
 
 export function LoginFields() {
-
+    let history = useHistory();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+    const handleSubmit = async (event) => {
+        event.preventDefault()
 
-        console.log('submitted', username, password)
+        const loginResult = await fetch('http://codegrounds.tale.me:1000/authentication/login', {
+            method: 'POST',
+            credentials: 'include',
+            body: JSON.stringify({
+                username: username,
+                password: password
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        console.log(loginResult)
+        console.log(await loginResult.json())
+
+        const testResult = await fetch('http://codegrounds.tale.me:1000/authentication/test', {
+            method: 'POST',
+            credentials: 'include'
+        })
+
+        console.log(testResult)
+        console.log(await testResult.json())
+
+        if (testResult.status === 200) {
+            history.push('/overview')
+        }
     }
 
     return (
@@ -21,8 +47,8 @@ export function LoginFields() {
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </label>
                 <label>
-                    Username:
-                    <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    Password:
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </label>
                 <input type="submit" value="Submit" />
             </form>

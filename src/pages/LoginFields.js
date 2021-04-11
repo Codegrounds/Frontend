@@ -34,7 +34,7 @@ export function LoginFields() {
 		console.log(await testResult.json())
 
 		if (testResult.status === 200) {
-			history.push('/overview')
+			history.push('/lessons')
 		}
 	}
 

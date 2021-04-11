@@ -22,7 +22,6 @@ export function App() {
 						<Route path='/login' exact component={LoginFields} />
 						<Route path='/signup' exact component={SignupFields} />
 						<Route path='/logout' exact component={LogoutFields} />
-						<Route path='/overview' exact component={OverviewPage} />
 						<Route path='/lesson/:lessonID' component={LessonPage} />
 						<Route path='/lessons' exact component={LessonOverview} />
 						<Route path='/test' exact component={Tests} />

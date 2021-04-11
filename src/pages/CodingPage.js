@@ -2,14 +2,14 @@ import Editor from "@monaco-editor/react";
 import React, { useRef, useState, useEffect } from 'react';
 import { v4 } from 'uuid';
 import 'codegrounds/styles/App.css';
-import { Console } from "codegrounds/components";
+import { Console, Tests } from "codegrounds/components";
 
 function CodingPage({ lesson }) {
 
 	const editorRef = useRef(null);
 	const scrollDownConsole = useRef(null);
 	const [consoleOpen, setConsoleOpen] = useState(false);
-	const [testOpen, setTestOpen] = useState(false);
+	const [testOpen, setTestOpen] = useState(true);
 	const [consoleOutput, setConsoleOutput] = useState('')
 	const [submittedStatus, setSubmittedStatus] = useState(false)
 

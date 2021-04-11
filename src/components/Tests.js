@@ -7,11 +7,12 @@ export function Tests({ open, setOpen }) {
 	const [correct, setCorrect] = useState([false, false, false, false])
 	const [tested, setTested] = useState(false)
 
+
 	return (
 
 		<div className="Tests">
 
-			<div className="TestsContainer" style={{ width: !open ? '5vw' : null }}>
+			<div className="TestsContainer" style={{ width: !open ? '5.5vw' : null }}>
 
 				<header className="CheckText">
 					Tests

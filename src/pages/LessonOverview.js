@@ -10,10 +10,9 @@ function LessonOverview() {
 
 	return (
 		<div className="LessonPage">
-			<h1>
-				Lessons
+			<h1 style={{color: 'white'}}>
+				Javascript Lessons
             </h1>
-
 
 			{Object.keys(chapters).map(chapter => {
 				let lessons = chapters[chapter];

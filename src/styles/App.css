@@ -126,7 +126,7 @@
 	flex-direction: column;
 	justify-self: center;
 	border-radius: 20px;
-	background-color: rgb(23, 52, 82);
+	background-color: rgb(54, 60, 64);
 	justify-content: space-around;
 	align-items: center;
 	text-align: center;
@@ -151,7 +151,7 @@
 .LessonButton {
 	width: 20vw;
 	height: 15vh;
-	background-color: slategrey;
+	background-color: #9d9d9d;
 	font-size: 20px;
 	font-weight: bold;
 	color: black;
@@ -215,7 +215,7 @@
 	font-size: 50px;
 	font-weight: bold;
 	border-bottom: 2px #333333 solid;
-	color: black;
+	color: #2a2d2d;
 }
 
 .ConsoleTopBar {

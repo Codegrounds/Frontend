@@ -11,11 +11,11 @@ import MDReactComponent from 'markdown-react-js';
 function LessonPage(props) {
 
 	const { lessonID } = props.match.params
-	const {lessons} = useContext(LessonsContext)
+	const { lessons } = useContext(LessonsContext)
 	const lesson = lessons[lessonID]
 
 	return (
-		<div className="LessonPage" style={(lesson.type === 'code') ? {overflow: 'hidden'} : null}>
+		<div className="LessonPage" style={(lesson.type === 'code') ? { overflow: 'hidden' } : null}>
 
 			<div style={{ display: 'flex', flexDirection: 'row', width: '100%', height: '100%' }}>
 				<LessonNavSidebar currentLessonID={lessonID} />

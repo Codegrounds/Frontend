@@ -10,7 +10,7 @@ export function Console({contents, open, setOpen}) {
                 <img src={open ? closeImg : openImg} style={{width:30, height: 30, cursor: 'pointer', paddingRight: 20}} alt="toggle console" onClick={() => setOpen(!open)}/>
             </div>
             {open ?
-                <div className="ConsoleBounds">
+                <div className="ConsoleTextArea">
                     {contents.split('\n').map(line => (
                         <p>{line}</p>
                     ))}

@@ -201,9 +201,22 @@
 	color: black;
 }
 
+.ConsoleTopBar {
+	width: 100%;
+	height: 3vh;
+	background-color: #454a4a;
+
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+	color: white;
+	border-bottom: 1px #646464 solid;
+}
 
 .ConsoleBounds {
 	width: 100%;
+	height: 20vh;
 	background-color: #313434;
 
 	display: flex;

@@ -67,7 +67,7 @@ function CodingPage({ lesson }) {
 				onMount={handleEditorDidMount}
 				theme="vs-dark"
 				width="90vw"
-				height={consoleOpen ? '75vh' : '92vh'}
+				height={consoleOpen ? '72vh' : '92vh'}
 				defaultLanguage="javascript"
 				defaultValue="// some comment"
 			/>

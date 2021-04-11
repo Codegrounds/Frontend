@@ -7,10 +7,6 @@ function LoginPage() {
 	return (
 		<div className="LoginPage">
 
-			<div>
-				{MultipleChoice}
-			</div>
-
 			<view className="LoginPageButtonContainer">
 
 				<Link to="/overview" style={{ textDecoration: 'none' }}>

@@ -1,19 +1,39 @@
+import { useState, createContext } from 'react';
 
 export function MultipleChoice() {
 
 	const questions =
-		{ question: 'one', Answers: ['hello', 'hi', 'bye', 'guy'] }
+	{
+		question: 'Which answer correctly creates a varieble?',
+		Answers: ['let x = "hello"', 'le x = 1;', 'let = 3.4', 'let x = 4;'],
+		correct: 3
+	}
 
+	const [clicked, setClicked] = useState(false)
+	const [display, setDisplay] = useState(0)
 
 	return (
 
 		<div className="MultipleChoice">
+
 			<div className="MultipleChoiceOuterContainer">
 
-				{questions.Answers.map(question => (
+				<div className="Question">
 
-					<div className="MultipleChoiceInnerContainer">
-						{question}
+					{questions.question.split()}
+
+				</div>
+
+				{questions.Answers.map((que, i) => (
+
+					<div className="MultipleChoiceInnerContainer" onClick={() => Inside(i)}>
+						<div style={{
+							textDecoration: 'none', width: '100%', height: '100%',
+							borderRadius: '5px', justifyContent: 'center', alignItems: 'center', textAlign: "center",
+							backgroundColor: (i != display || !clicked) ? '#646464' : (i == questions.correct) ? "#396b4c" : "#6b3939"
+						}}>
+							{que}
+						</div>
 					</div>
 
 				))}
@@ -23,4 +43,19 @@ export function MultipleChoice() {
 
 
 	);
+
+	function Inside(i) {
+
+		if (!clicked) {
+			setClicked(true);
+
+			setDisplay(i);
+
+
+		}
+
+	}
+
 }
+
+

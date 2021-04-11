@@ -26,12 +26,12 @@ export function Loader(props) {
 
     const loadLessons = async () => {
 
-        const allID = await (await fetch('https://api-codegrounds.atale.me/v1/lesson/all')).json()
+        const allID = await (await fetch('https://codegrounds.atale.me/v1/lesson/all')).json()
         const lessonIDs = allID.data.map(idDict => idDict.id)
 
         let dict = {}
         for (const lessonID of lessonIDs) {
-            const res = await fetch(`https://api-codegrounds.atale.me/v1/lesson?id=${lessonID}`)
+            const res = await fetch(`https://codegrounds.atale.me/v1/lesson?id=${lessonID}`)
             const body = await res.json()
 
             const data = body.data;

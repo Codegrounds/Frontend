@@ -7,6 +7,8 @@ import LoginPage from "./LoginPage";
 import LessonOverview from "./LessonOverview";
 import { MultipleChoice, Tests } from '../components';
 import { LoginFields } from "./LoginFields";
+import { SignupFields } from './SignupFields'
+import { LogoutFields } from './LogoutFields'
 
 
 export function App() {
@@ -18,6 +20,8 @@ export function App() {
 
 						<Route path='/' exact component={LoginPage} />
 						<Route path='/login' exact component={LoginFields} />
+						<Route path='/signup' exact component={SignupFields} />
+						<Route path='/logout' exact component={LogoutFields} />
 						<Route path='/overview' exact component={OverviewPage} />
 						<Route path='/lesson/:lessonID' component={LessonPage} />
 						<Route path='/lessons' exact component={LessonOverview} />

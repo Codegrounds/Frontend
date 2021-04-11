@@ -13,14 +13,14 @@ function LoginPage() {
 
 			<div className="LoginPageButtonContainer">
 
-				<Link to="/overview" style={{ textDecoration: 'none' }}>
+				<Link to="/login" style={{ textDecoration: 'none' }}>
 					<p className="LoginPageButton">
 						Login
                     </p>
 				</Link>
 
 
-				<Link to="/create" style={{ textDecoration: 'none' }}>
+				<Link to="/signup" style={{ textDecoration: 'none' }}>
 					<div className="LoginPageButton">
 						Create Account
                     </div>

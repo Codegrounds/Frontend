@@ -176,7 +176,7 @@ function CodingPage({ lesson }) {
 					/>
 					<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput} scrollDown={scrollDownConsole} />
 				</div>
-				<Tests open={testOpen} setOpen={setTestOpen} />
+				<Tests open={testOpen} setOpen={setTestOpen} lessonId={lesson.id}/>
 			</div>
 		</div>
 	);

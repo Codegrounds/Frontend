@@ -16,6 +16,9 @@ export function LessonNavSidebar({ currentLessonID }) {
 					<img src={arrowImag} style={{width:30, height: 30, cursor: 'pointer', paddingLeft: 10, paddingTop: 10}} alt="back arrow"/>
 				</Link>
 			</div>
+			<Link to={'/logout/'}>
+				<h2 style={{ flex: 1, marginLeft: 'auto' }}>Logout</h2>
+			</Link>
 			{Object.keys(lessons).map(lessonID => (
 				<Link to={'/lesson/' + lessonID} key={lessonID+'-nav'}
 					style={{ textDecoration: 'none', color: (currentLessonID === lessonID) ? 'yellow' : 'white', fontWeight: (currentLessonID === lessonID) ? 'bold' : 'normal' }}>

@@ -2,28 +2,30 @@ import 'codegrounds/styles/App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LessonPage from "./LessonPage";
 import OverviewPage from "./OverviewPage";
-import { GlobalProvider } from 'codegrounds/state';
+import { GlobalProvider, Loader } from 'codegrounds/state';
 import LoginPage from "./LoginPage";
 import LessonOverview from "./LessonOverview";
-import { MultipleChoice } from '../components';
-import {LoginFields} from "./LoginFields";
+import { MultipleChoice, Tests } from '../components';
+import { LoginFields } from "./LoginFields";
 
 
 export function App() {
 	return (
 		<Router>
 			<GlobalProvider>
-				<Switch>
+				<Loader>
+					<Switch>
 
-					<Route path='/' exact component={LoginPage} />
-					<Route path='/login' exact component={LoginFields} />
-					<Route path='/overview' exact component={OverviewPage} />
-					<Route path='/lesson/:lessonID' component={LessonPage} />
-					<Route path='/lessons' exact component={LessonOverview} />
-					<Route path='/test' exact component={MultipleChoice} />
+						<Route path='/' exact component={LoginPage} />
+						<Route path='/login' exact component={LoginFields} />
+						<Route path='/overview' exact component={OverviewPage} />
+						<Route path='/lesson/:lessonID' component={LessonPage} />
+						<Route path='/lessons' exact component={LessonOverview} />
+						<Route path='/test' exact component={Tests} />
 
 
-				</Switch>
+					</Switch>
+				</Loader>
 			</GlobalProvider>
 		</Router>
 	);

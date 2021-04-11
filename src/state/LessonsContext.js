@@ -15,6 +15,7 @@ export const LessonsProvider = (props) => {
 			let id = toID(lessonData.name)
 			dict[id] = { id, name: lessonData.name, chapter: lessonData.chapter, type: lessonData.type ? lessonData.type : 'lesson', markdown: generateLesson(lessonData.name) }
 		})
+
 		return dict;
 	}
 
@@ -47,9 +48,11 @@ export const LessonsProvider = (props) => {
 		{ name: 'Lesson 14', chapter: '1.2' },
 	]);
 
-	const [lessons, setLessons] = useState(lessonsDict)
 
-	const [chapters, setChapters] = useState(toChapters(lessonsDict))
+
+	const [lessons, setLessons] = useState({})
+
+	const [chapters, setChapters] = useState(toChapters({}))
 
 	return <LessonsContext.Provider value={{ lessons, setLessons, chapters, setChapters }}>{props.children}</LessonsContext.Provider>;
 }

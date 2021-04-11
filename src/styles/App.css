@@ -192,6 +192,7 @@
 }
 
 .LessonHeader {
+
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -301,4 +302,51 @@
 	padding-left: 10%;
 
 	font-size: 18px;
+}
+
+.Tests {
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-right: 20px;
+
+}
+
+.TestsContainer {
+
+	display: flex;
+	width: 25%;
+	height: 50vh;
+	margin-top: 25vh;
+	background-color: #646464;
+	border-radius: 5;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	border-radius: 5px;
+	
+}
+
+.CheckContainer {
+
+	display: flex;
+	height: 18%;
+	width: 97%;
+	background-color: #313434;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	border-radius: 5px;
+}
+
+.CheckText {
+
+	display: flex;
+	color: white; 
+	height: 18%;
+	font-size: large;
+	align-items: center;
+	justify-content: center;
+
 }

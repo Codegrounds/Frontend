@@ -54,7 +54,7 @@ export function LoginFields() {
                     	<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 					</div>
 
-					<input type="submit" value="Submit" style={{ width: '60%', height: '50%' }} />
+					<input type="submit" value="Submit" style={{ width: '60%', height: '30%' }} />
 				</form>
 
 			</div>

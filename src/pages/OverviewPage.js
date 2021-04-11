@@ -10,7 +10,7 @@ function OverviewPage() {
 				Courses
 			</p>
 
-			<view className="OverviewPageButtonContainer">
+			<div className="OverviewPageButtonContainer">
 
 				<Link to="/lessons" style={{ textDecoration: 'none' }}>
 					<div className="OverviewPageButton">
@@ -27,10 +27,10 @@ function OverviewPage() {
 				<Link to="/lessons" style={{ textDecoration: 'none' }}>
 					<div className="OverviewPageButton">
 						NA
-                        </div>
+					</div>
 				</Link>
 
-			</view>
+			</div>
 
 		</div>
 	);

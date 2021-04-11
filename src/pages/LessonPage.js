@@ -15,7 +15,7 @@ function LessonPage(props) {
 	const lesson = lessons[lessonID]
 
 	return lesson !== undefined ? (
-		<div className="LessonPage" style={(lesson.type === 'code') ? {overflow: 'hidden'} : {overflowX: 'hidden'}}>
+		<div className="LessonPage" style={{ overflow: 'hidden' }}>
 			<div style={{ display: 'flex', flexDirection: 'row', width: '100%', height: '100%' }}>
 				<LessonNavSidebar currentLessonID={lessonID} />
 

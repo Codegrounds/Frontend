@@ -57,6 +57,27 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	background-color: #646464;
+}
+
+.LoginPageContainer {
+	width: 50%;
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #454a4a;
+	border-radius: 5px;
+	font-size: 25px;
+}
+
+.LoginPageFiller {
+	display: flex;
+	background-color: green;
+	width: 60%;
+	height: 5%;
 }
 
 .LoginPageButtonContainer {

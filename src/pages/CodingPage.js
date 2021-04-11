@@ -30,6 +30,7 @@ function CodingPage({ lesson }) {
 	}
 
 	const runFile = async () => {
+		setConsoleOutput(consoleOutput.concat(`[${new Date().toLocaleTimeString()}] Running File >\n`))
 		const response = await fetch('https://api-codegrounds.atale.me/v1/runner/javascript', {
 			method: 'POST',
 			body: JSON.stringify({
@@ -41,10 +42,11 @@ function CodingPage({ lesson }) {
 			}
 		})
 
-		updateConsole(response)
+		await updateConsole(response)
 	}
 
 	const testFile = async () => {
+		setConsoleOutput(consoleOutput.concat(`[${new Date().toLocaleTimeString()}] Testing File >\n`))
 		const response = await fetch('https://api-codegrounds.atale.me/v1/validate/javascript', {
 			method: 'POST',
 			body: JSON.stringify({
@@ -57,7 +59,7 @@ function CodingPage({ lesson }) {
 			}
 		})
 
-		updateConsole(response)
+		await updateConsole(response)
 	}
 
 	return (

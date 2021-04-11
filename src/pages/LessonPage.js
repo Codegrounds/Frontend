@@ -3,8 +3,8 @@ import React, { useContext, useRef } from "react";
 import { LessonsContext } from "codegrounds/state";
 import { LessonNavSidebar, MultipleChoice } from "codegrounds/components";
 import CodingPage from "./CodingPage";
-import ReactMarkdown from 'react-markdown'
-import gfm from 'remark-gfm'
+import Loader from 'react-loader-spinner';
+
 
 import MDReactComponent from 'markdown-react-js';
 
@@ -38,10 +38,8 @@ function LessonPage(props) {
 			</div>
 		</div>
 	) : (
-		<div className="LessonPage">
-			<p>
-				Loading
-			</p>
+		<div className="LessonPage" style={{justifyContent: 'center', alignItems: 'center'}}>
+			<Loader type="ThreeDots" color="#666688" height={80} width={80}/>
 		</div>
 	)
 }

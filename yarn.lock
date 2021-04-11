@@ -1611,6 +1611,7 @@ __metadata:
     markdown-react-js: ^1.0.2
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-loader-spinner: ^4.0.0
     react-markdown: ^5.0.3
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3
@@ -12514,6 +12515,18 @@ fsevents@^1.2.7:
   version: 17.0.1
   resolution: "react-is@npm:17.0.1"
   checksum: 5a83dfc78e7adcb93d632bf367b0733db650e3abd2e9c57c33b87e50d201212c1884b0d7bcf13e692f1556189fa1b87f9f3e0ba10fe858fd6aebe83ed4fcd1ea
+  languageName: node
+  linkType: hard
+
+"react-loader-spinner@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "react-loader-spinner@npm:4.0.0"
+  dependencies:
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: aa50ff4f419fa935519c27e7fa32cb2767c8f11f3a0f060432888f3798ecd8c9fee1398f303c43ab7c6201307ce250ac4f7b1d1714277a3135a28810d4675f63
   languageName: node
   linkType: hard
 

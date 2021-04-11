@@ -36,6 +36,10 @@ export const LessonsProvider = (props) => {
 		{ name: 'Lesson 1', chapter: '1.1' },
 		{ name: 'Lesson 2', chapter: '1.1' },
 		{ name: 'Lesson 3', chapter: '1.1' },
+		{ name: 'Multiple Choice', chapter: '1.1', type: 'mc' },
+		{ name: 'Logic 1', chapter: '1.1' },
+		{ name: 'Logic 2', chapter: '1.1' },
+		{ name: 'Logic 3', chapter: '1.1' },
 		{ name: 'Debug', chapter: '1.1', type: 'code' },
 		{ name: 'Unit Test', chapter: '1.1' },
 		{ name: 'Lesson 12', chapter: '1.2' },
@@ -47,5 +51,5 @@ export const LessonsProvider = (props) => {
 
 	const [chapters, setChapters] = useState(toChapters(lessonsDict))
 
-	return <LessonsContext.Provider value={{lessons, setLessons, chapters, setChapters}}>{props.children}</LessonsContext.Provider>;
+	return <LessonsContext.Provider value={{ lessons, setLessons, chapters, setChapters }}>{props.children}</LessonsContext.Provider>;
 }

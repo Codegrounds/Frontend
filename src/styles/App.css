@@ -70,19 +70,13 @@
 	text-align: center;
 	background-color: #454a4a;
 	border-radius: 5px;
-	font-size: 25px;
-}
-
-.LoginPageFiller {
-	display: flex;
-	background-color: green;
-	width: 60%;
-	height: 5%;
+	font-size: 40px;
+	font-weight:600;
 }
 
 .LoginPageButtonContainer {
-	width: 35vw;
-	height: 40vh;
+	width: 45vw;
+	height: 50vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -115,7 +109,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
-	background-color: #646464 solid;
+	background-color: #646464;
 }
 
 .LessonButtonInnerContainer {

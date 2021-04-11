@@ -40,7 +40,9 @@ export function LoginFields() {
 
 	return (
 		<div className="LoginPage">
-
+			<h1>
+				Log In
+			</h1>
 			<div className="LoginPageContainer">
 				<form onSubmit={handleSubmit}>
 					<div>
@@ -52,7 +54,7 @@ export function LoginFields() {
                     	<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 					</div>
 
-					<input type="submit" value="Submit" style={{ width: '50%', height: '20%' }} />
+					<input type="submit" value="Submit" style={{ width: '60%', height: '50%' }} />
 				</form>
 
 			</div>

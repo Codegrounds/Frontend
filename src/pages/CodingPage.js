@@ -5,6 +5,8 @@ import 'codegrounds/styles/App.css';
 import { Console, Tests } from "codegrounds/components";
 
 function CodingPage({ lesson }) {
+	const [tested, setTested] = useState(false)
+	const [testerValues, setTesterValues] = useState([])
 	const editorRef = useRef(null);
 	const scrollDownConsole = useRef(null);
 	const [consoleOpen, setConsoleOpen] = useState(false);
@@ -37,7 +39,7 @@ function CodingPage({ lesson }) {
 			credentials: 'include',
 			body: JSON.stringify({
 				lesson_id: lesson.id,
-				code_data: value ? value : editorRef.current.getValue()
+				code_data: value ? value : editorRef.current ? editorRef.current.getValue() : lesson.shell_code
 			}),
 			headers: {
 				'Content-Type': 'application/json'
@@ -99,6 +101,24 @@ function CodingPage({ lesson }) {
 		})
 
 		await updateConsole(response)
+		setTestOpen(true)
+		setTested(true)
+
+		const validationResponse = await fetch('https://codegrounds.atale.me/v1/validate/javascript', {
+			method: 'POST',
+			body: JSON.stringify({
+				transaction_id: v4(),
+				code_data: editorRef.current.getValue(),
+				lesson_id: lesson.id
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+
+		const validationData = await validationResponse.json()
+		setTesterValues(validationData.data.validationInfo ? validationData.data.validationInfo : [])
+
 		openConsole()
 	}
 
@@ -176,7 +196,7 @@ function CodingPage({ lesson }) {
 					/>
 					<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput} scrollDown={scrollDownConsole} />
 				</div>
-				<Tests open={testOpen} setOpen={setTestOpen} lessonId={lesson.id}/>
+				<Tests open={testOpen} setOpen={setTestOpen} lessonId={lesson.id} tested={tested} values={testerValues}/>
 			</div>
 		</div>
 	);

@@ -1,12 +1,18 @@
-import { useState } from "react";
+import {useEffect, useState} from "react";
 
-export function Tests({ open, setOpen }) {
+export function Tests({ open, setOpen, lessonId, tested, values }) {
+	useEffect(async () => {
+		const res = await fetch(`https://codegrounds.atale.me/v1/lesson?id=${lessonId}`)
+		const data = await res.json()
+		setQuestions(data.data.expected_output)
 
-	const questions = ['(0, 0) == true', '(0, 1) == true', '(1, 0) == false', '(1, 1) == true']
+		if (values.length > 0) {
+			setCorrect(values)
+		}
+	});
 
-	const [correct] = useState([false, false, false, false])
-	const [tested] = useState(false)
-
+	const [questions, setQuestions] = useState([])
+	const [correct, setCorrect] = useState([])
 
 	return (
 

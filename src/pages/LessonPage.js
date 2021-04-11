@@ -1,5 +1,5 @@
 import 'codegrounds/styles/App.css';
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { LessonsContext } from "codegrounds/state";
 import { LessonNavSidebar, MultipleChoice } from "codegrounds/components";
 import CodingPage from "./CodingPage";
@@ -20,7 +20,7 @@ function LessonPage(props) {
 				<LessonNavSidebar currentLessonID={lessonID} />
 
 
-				{lesson.type === 'code' ? <CodingPage lesson={lesson} /> : lesson.type === 'mc' ? <MultipleChoice multipleChoice={lesson} /> :
+				{lesson.type === 'code' ? <CodingPage lesson={lesson}/> : lesson.type === 'mc' ? <MultipleChoice multipleChoice={lesson} /> :
 					<div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
 						<div className="LessonHeader">
 							{lesson.name}

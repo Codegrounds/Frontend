@@ -7,6 +7,7 @@ import {Console} from "codegrounds/components";
 function CodingPage({ lesson }) {
 
 	const editorRef = useRef(null);
+	const scrollDownConsole = useRef(null);
 	const [consoleOpen, setConsoleOpen] = useState(false);
 	const [consoleOutput, setConsoleOutput] = useState('')
 	const [submittedStatus, setSubmittedStatus] = useState(false)
@@ -46,6 +47,11 @@ function CodingPage({ lesson }) {
 		console.log(response)
 	}
 
+	const openConsole = () => {
+		setConsoleOpen(true)
+		scrollDownConsole.current()
+	}
+
 	async function updateConsole(response) {
 		if (response.status === 200) {
 			const body = await response.json()
@@ -75,6 +81,7 @@ function CodingPage({ lesson }) {
 		})
 
 		await updateConsole(response)
+		openConsole()
 	}
 
 	const testFile = async () => {
@@ -92,6 +99,7 @@ function CodingPage({ lesson }) {
 		})
 
 		await updateConsole(response)
+		openConsole()
 	}
 
 	const submitFile = async () => {
@@ -164,7 +172,7 @@ function CodingPage({ lesson }) {
 				defaultLanguage="javascript"
 				defaultValue={lesson.shell_code}
 			/>
-			<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput}/>
+			<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput} scrollDown={scrollDownConsole}/>
 		</div>
 	);
 }

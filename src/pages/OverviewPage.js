@@ -18,17 +18,13 @@ function OverviewPage() {
 					</div>
 				</Link>
 
-				<Link to="/lessons" style={{ textDecoration: 'none' }}>
-					<div className="OverviewPageButton">
-						NA
-					</div>
-				</Link>
+				<div className="OverviewPageButton">
+					N/A
+				</div>
 
-				<Link to="/lessons" style={{ textDecoration: 'none' }}>
-					<div className="OverviewPageButton">
-						NA
-					</div>
-				</Link>
+				<div className="OverviewPageButton">
+					N/A
+				</div>
 
 			</div>
 

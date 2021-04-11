@@ -39,7 +39,7 @@ export function Loader(props) {
             dict[lessonID] = {id: lessonID, name: data.name, chapter: data.chapter, type: data.type, markdown: data.markdown,
                 shell_code: data.shell_code, expected_output: data.expected_output}
         }
-        
+
         setLessons(dict)
         setChapters(toChapters(dict))
     }

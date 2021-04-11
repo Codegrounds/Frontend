@@ -7,7 +7,17 @@ export function Tests({ open, setOpen, lessonId, tested, values }) {
 		setQuestions(data.data.expected_output)
 
 		if (values.length > 0) {
-			setCorrect(values)
+			for (let i = 0; i < values.length; i++) {
+				if (values[i] === questions[i]) {
+					const list = correct
+					list[i] = true
+					setCorrect(list)
+				} else {
+					const list = correct
+					list[i] = false
+					setCorrect(list)
+				}
+			}
 		}
 	});
 

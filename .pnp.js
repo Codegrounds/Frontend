@@ -48,6 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:17.0.2"],
             ["react-markdown", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:5.0.3"],
+            ["react-monaco-editor", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:0.43.0"],
             ["react-router-dom", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:5.2.0"],
             ["react-scripts", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:4.0.3"],
             ["remark-gfm", "npm:1.0.0"],
@@ -4027,6 +4028,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:17.0.2"],
             ["react-dom", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:17.0.2"],
             ["react-markdown", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:5.0.3"],
+            ["react-monaco-editor", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:0.43.0"],
             ["react-router-dom", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:5.2.0"],
             ["react-scripts", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:4.0.3"],
             ["remark-gfm", "npm:1.0.0"],
@@ -14155,6 +14157,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["monaco-editor", [
+        ["npm:0.23.0", {
+          "packageLocation": "./.yarn/cache/monaco-editor-npm-0.23.0-f10184dc03-505de80fde.zip/node_modules/monaco-editor/",
+          "packageDependencies": [
+            ["monaco-editor", "npm:0.23.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["move-concurrently", [
         ["npm:1.0.1", {
           "packageLocation": "./.yarn/cache/move-concurrently-npm-1.0.1-e1e3c7e2cf-0761308ddb.zip/node_modules/move-concurrently/",
@@ -16792,6 +16803,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["unified", "npm:9.2.1"],
             ["unist-util-visit", "npm:2.0.3"],
             ["xtend", "npm:4.0.2"]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "@types/types__react",
+            "react"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["react-monaco-editor", [
+        ["npm:0.43.0", {
+          "packageLocation": "./.yarn/cache/react-monaco-editor-npm-0.43.0-4bac5b34c4-3d18242d50.zip/node_modules/react-monaco-editor/",
+          "packageDependencies": [
+            ["react-monaco-editor", "npm:0.43.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:0.43.0", {
+          "packageLocation": "./.yarn/$$virtual/react-monaco-editor-virtual-5aa3b9380d/0/cache/react-monaco-editor-npm-0.43.0-4bac5b34c4-3d18242d50.zip/node_modules/react-monaco-editor/",
+          "packageDependencies": [
+            ["react-monaco-editor", "virtual:ac915773257d00a083e433eda2a88c4476b0b5b40281f353b0424e3702d8dccff3afdc6f34816ca19571563f43d3f82d333cffeeb11c4d5585473fd8096d4326#npm:0.43.0"],
+            ["@types/react", "npm:17.0.3"],
+            ["@types/types__react", null],
+            ["monaco-editor", "npm:0.23.0"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:17.0.2"]
           ],
           "packagePeers": [
             "@types/react",

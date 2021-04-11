@@ -1,10 +1,15 @@
 import React from 'react';
 import 'codegrounds/styles/App.css';
 import { Link } from "react-router-dom";
+import { MultipleChoice } from '../components';
 
 function LoginPage() {
 	return (
 		<div className="LoginPage">
+
+			<div>
+				{MultipleChoice}
+			</div>
 
 			<view className="LoginPageButtonContainer">
 

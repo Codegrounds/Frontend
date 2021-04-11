@@ -10,7 +10,7 @@ export function LoginFields() {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const loginResult = await fetch('http://codegrounds.tale.me:1000/authentication/login', {
+        const loginResult = await fetch('https://codegrounds.atale.me/v1/authentication/login', {
             method: 'POST',
             credentials: 'include',
             body: JSON.stringify({
@@ -25,7 +25,7 @@ export function LoginFields() {
         console.log(loginResult)
         console.log(await loginResult.json())
 
-        const testResult = await fetch('http://codegrounds.tale.me:1000/authentication/test', {
+        const testResult = await fetch('https://codegrounds.atale.me/v1/authentication/test', {
             method: 'POST',
             credentials: 'include'
         })

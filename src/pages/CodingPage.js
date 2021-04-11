@@ -5,7 +5,6 @@ import 'codegrounds/styles/App.css';
 import { Console, Tests } from "codegrounds/components";
 
 function CodingPage({ lesson }) {
-
 	const editorRef = useRef(null);
 	const scrollDownConsole = useRef(null);
 	const [consoleOpen, setConsoleOpen] = useState(false);
@@ -14,7 +13,7 @@ function CodingPage({ lesson }) {
 	const [submittedStatus, setSubmittedStatus] = useState(false)
 
 	useEffect(async () => {
-		const statusResult = await fetch(`http://codegrounds.tale.me:1000/editor/status?id=${lesson.id}`, {
+		const statusResult = await fetch(`https://codegrounds.atale.me/v1/editor/status?id=${lesson.id}`, {
 			credentials: 'include',
 		})
 
@@ -23,7 +22,7 @@ function CodingPage({ lesson }) {
 	});
 
 	async function handleEditorDidMount(editor, monaco) {
-		const saveResult = await fetch(`http://codegrounds.tale.me:1000/editor/save?id=${lesson.id}`, {
+		const saveResult = await fetch(`https://codegrounds.atale.me/v1/editor/save?id=${lesson.id}`, {
 			credentials: 'include',
 		})
 
@@ -33,7 +32,7 @@ function CodingPage({ lesson }) {
 	}
 
 	async function handleEditorChange(value, event) {
-		const response = await fetch('http://codegrounds.tale.me:1000/editor/save', {
+		const response = await fetch('https://codegrounds.atale.me/v1/editor/save', {
 			method: 'POST',
 			credentials: 'include',
 			body: JSON.stringify({
@@ -119,7 +118,7 @@ function CodingPage({ lesson }) {
 		if (response.status === 200) {
 			const data = await response.json()
 			if (data.data.validation === true) {
-				const submission = await fetch('http://codegrounds.tale.me:1000/editor/status', {
+				const submission = await fetch('https://codegrounds.atale.me/v1/editor/status', {
 					method: 'POST',
 					credentials: 'include',
 					body: JSON.stringify({
@@ -134,7 +133,7 @@ function CodingPage({ lesson }) {
 
 				console.log(await submission.json())
 			} else {
-				const submission = await fetch('http://codegrounds.tale.me:1000/editor/status', {
+				const submission = await fetch('https://codegrounds.atale.me/v1/editor/status', {
 					method: 'POST',
 					credentials: 'include',
 					body: JSON.stringify({

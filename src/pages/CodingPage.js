@@ -78,6 +78,57 @@ function CodingPage({ lesson }) {
 		await updateConsole(response)
 	}
 
+	const submitFile = async () => {
+		const response = await fetch('https://api-codegrounds.atale.me/v1/validate/javascript', {
+			method: 'POST',
+			body: JSON.stringify({
+				transaction_id: v4(),
+				code_data: editorRef.current.getValue(),
+				lesson_id: 'lesson_2'
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+
+		if (response.status === 200) {
+			const data = await response.json()
+			if (data.validation === true) {
+				const submission = await fetch('https://codegrounds.tale.me:1000/editor/status', {
+					method: 'POST',
+					credentials: 'include',
+					body: JSON.stringify({
+						lesson_id: lesson.id,
+						status: 'completed',
+						code_data: editorRef.current.getValue()
+					}),
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+
+				console.log(await submission.json())
+			} else {
+				const submission = await fetch('http://codegrounds.tale.me:1000/editor/status', {
+					method: 'POST',
+					credentials: 'include',
+					body: JSON.stringify({
+						lesson_id: lesson.id,
+						status: 'in_progress',
+						code_data: editorRef.current.getValue()
+					}),
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+
+				console.log(await submission.json())
+			}
+		} else {
+			console.log('API Error Submitting')
+		}
+	}
+
 	return (
 		<div>
 			<div className="CodingTopBar">
@@ -86,7 +137,7 @@ function CodingPage({ lesson }) {
 				</div>
 				<div className="CodingTopButton" onClick={runFile}>Run</div>
 				<div className="CodingTopButton" onClick={testFile}>Test</div>
-				<div className="CodingTopButton" onClick={() => console.log('Submit')}>Submit</div>
+				<div className="CodingTopButton" onClick={submitFile}>Submit</div>
 			</div>
 			<Editor
 				onMount={handleEditorDidMount}

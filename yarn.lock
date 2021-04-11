@@ -1612,7 +1612,6 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     react-markdown: ^5.0.3
-    react-monaco-editor: ^0.43.0
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3
     remark-gfm: ^1.0.0
@@ -10216,13 +10215,6 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"monaco-editor@npm:*":
-  version: 0.23.0
-  resolution: "monaco-editor@npm:0.23.0"
-  checksum: 505de80fdea26359eff9837f2d9fd033e45de81e8e07f22464c0dd41aff386601489b9e579e8c962c3b1a6ed5690e936c09f84354d31d1f8bac7ed59e1ebf291
-  languageName: node
-  linkType: hard
-
 "move-concurrently@npm:^1.0.1":
   version: 1.0.1
   resolution: "move-concurrently@npm:1.0.1"
@@ -12543,19 +12535,6 @@ fsevents@^1.2.7:
     "@types/react": ">=16"
     react: ">=16"
   checksum: 9e27eb9efd9288777210a7195720e8eb01880baa3ae3b5e1c7f40e324c052dc68594b62a70e4370b1b1180b6fa8e3e7486dea2d2d182f6fd66a05373164c18a6
-  languageName: node
-  linkType: hard
-
-"react-monaco-editor@npm:^0.43.0":
-  version: 0.43.0
-  resolution: "react-monaco-editor@npm:0.43.0"
-  dependencies:
-    monaco-editor: "*"
-    prop-types: ^15.7.2
-  peerDependencies:
-    "@types/react": ^17.x
-    react: ^17.x
-  checksum: 3d18242d505d2321828218abd491ff317514f354a9a1fa5fcb6ac92e01d58f4e09d7d3408141eab18b975c9d91386aea76a4c19e28196a6bf7523b7c0743803d
   languageName: node
   linkType: hard
 

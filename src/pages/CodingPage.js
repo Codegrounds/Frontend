@@ -9,7 +9,6 @@ function CodingPage({ lesson }) {
 	const editorRef = useRef(null);
 	const [consoleOpen, setConsoleOpen] = useState(false);
 	const [consoleOutput, setConsoleOutput] = useState('')
-	const [saveStatus, setSaveStatus] = useState('')
 	const [submittedStatus, setSubmittedStatus] = useState(false)
 
 	useEffect(async () => {
@@ -19,18 +18,15 @@ function CodingPage({ lesson }) {
 
 		const statusJson = await statusResult.json()
 		setSubmittedStatus(statusJson.data.status)
+	});
 
+	async function handleEditorDidMount(editor, monaco) {
 		const saveResult = await fetch(`http://codegrounds.tale.me:1000/editor/save?id=${lesson.id}`, {
 			credentials: 'include',
 		})
 
 		const saveJson = await saveResult.json()
-		setSaveStatus(saveJson.data.status)
-		editorRef.current = saveStatus
-		editorRef.current.setValue(saveJson.data.status)
-	});
-
-	function handleEditorDidMount(editor, monaco) {
+		editor.setValue(saveJson.data.status)
 		editorRef.current = editor;
 	}
 
@@ -166,7 +162,7 @@ function CodingPage({ lesson }) {
 				width="90vw"
 				height={consoleOpen ? '71vh' : '92vh'}
 				defaultLanguage="javascript"
-				defaultValue={saveStatus.length > 0 ? saveStatus : lesson.shell_code}
+				defaultValue={lesson.shell_code}
 			/>
 			<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput}/>
 		</div>

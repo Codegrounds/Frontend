@@ -77,7 +77,7 @@ function CodingPage({ lesson }) {
 				width="90vw"
 				height={consoleOpen ? '72vh' : '92vh'}
 				defaultLanguage="javascript"
-				defaultValue="// some comment"
+				defaultValue={lesson.shell_code}
 			/>
 			<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput}/>
 		</div>

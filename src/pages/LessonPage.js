@@ -14,9 +14,8 @@ function LessonPage(props) {
 	const {lessons} = useContext(LessonsContext)
 	const lesson = lessons[lessonID]
 
-	return (
+	return lesson !== undefined ? (
 		<div className="LessonPage" style={(lesson.type === 'code') ? {overflow: 'hidden'} : null}>
-
 			<div style={{ display: 'flex', flexDirection: 'row', width: '100%', height: '100%' }}>
 				<LessonNavSidebar currentLessonID={lessonID} />
 
@@ -38,7 +37,13 @@ function LessonPage(props) {
 				}
 			</div>
 		</div>
-	);
+	) : (
+		<div className="LessonPage">
+			<p>
+				Loading
+			</p>
+		</div>
+	)
 }
 
 export default LessonPage;

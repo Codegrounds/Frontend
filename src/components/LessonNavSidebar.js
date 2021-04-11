@@ -12,7 +12,7 @@ export function LessonNavSidebar({ currentLessonID }) {
 	return (
 		<div className="LessonNavSidebar">
 			{Object.keys(lessons).map(lessonID => (
-				<Link to={'/lesson/' + lessonID}
+				<Link to={'/lesson/' + lessonID} key={lessonID+'-nav'}
 					style={{ textDecoration: 'none', color: (currentLessonID === lessonID) ? 'yellow' : 'white', fontWeight: (currentLessonID === lessonID) ? 'bold' : 'normal' }}>
 					<p style={{ marginTop: 20 }}>{lessons[lessonID].name}</p>
 				</Link>

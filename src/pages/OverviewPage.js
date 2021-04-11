@@ -6,9 +6,9 @@ function OverviewPage() {
 	return (
 		<div className="OverviewPage">
 
-			<text className="OverviewPageCourses">
+			<p className="OverviewPageCourses">
 				Courses
-                </text>
+			</p>
 
 			<view className="OverviewPageButtonContainer">
 

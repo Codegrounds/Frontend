@@ -5,13 +5,7 @@ import { useRef } from 'react';
 
 export function Console({contents, open, setOpen, scrollDown}) {
 
-    //const bottomRef = useRef(null);
     const textAreaRef = useRef(null);
-
-    /*const handleBottomRef = (el) => {
-        bottomRef.current = el;
-        scrollDown.current = () => bottomRef.current.scrollIntoView({behavior: 'smooth'});
-    }*/
 
     const handleTextAreaRef = (el) => {
         textAreaRef.current = el;

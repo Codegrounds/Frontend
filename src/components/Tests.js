@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import closeImg from "codegrounds/images/CloseTests.png";
+import openImg from "codegrounds/images/OpenTests.png";
 
 export function Tests({ open, setOpen, lessonId, tested, values }) {
 	useEffect(async () => {
@@ -46,7 +48,9 @@ export function Tests({ open, setOpen, lessonId, tested, values }) {
 
 					: null}
 
-				<div className="RightButton" onClick={() => setOpen(!open)} />
+				<div style={{width: '100%', display: 'flex', flexDirection:'row'}}>
+					<img src={open ? closeImg : openImg} style={{width:30, height: 30, cursor: 'pointer', paddingLeft: 20}} alt="toggle tests" onClick={() => setOpen(!open)}/>
+				</div>
 
 			</div>
 

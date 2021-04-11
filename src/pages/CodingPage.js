@@ -1,5 +1,5 @@
 import Editor from "@monaco-editor/react";
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { v4 } from 'uuid';
 import 'codegrounds/styles/App.css';
 import {Console} from "codegrounds/components";
@@ -9,6 +9,26 @@ function CodingPage({ lesson }) {
 	const editorRef = useRef(null);
 	const [consoleOpen, setConsoleOpen] = useState(false);
 	const [consoleOutput, setConsoleOutput] = useState('')
+	const [saveStatus, setSaveStatus] = useState('')
+	const [submittedStatus, setSubmittedStatus] = useState(false)
+
+	useEffect(async () => {
+		const statusResult = await fetch(`http://codegrounds.tale.me:1000/editor/status?id=${lesson.id}`, {
+			credentials: 'include',
+		})
+
+		const statusJson = await statusResult.json()
+		setSubmittedStatus(statusJson.data.status)
+
+		const saveResult = await fetch(`http://codegrounds.tale.me:1000/editor/save?id=${lesson.id}`, {
+			credentials: 'include',
+		})
+
+		const saveJson = await saveResult.json()
+		setSaveStatus(saveJson.data.status)
+		editorRef.current = saveStatus
+		editorRef.current.setValue(saveJson.data.status)
+	});
 
 	function handleEditorDidMount(editor, monaco) {
 		editorRef.current = editor;
@@ -137,16 +157,16 @@ function CodingPage({ lesson }) {
 				</div>
 				<div className="CodingTopButton" onClick={runFile}>Run</div>
 				<div className="CodingTopButton" onClick={testFile}>Test</div>
-				<div className="CodingTopButton" onClick={submitFile}>Submit</div>
+				<div className="CodingTopButton" onClick={submitFile} style={submittedStatus ? { backgroundColor: '#11ff11' } : null}>{submittedStatus ? 'Submitted' : 'Submit'}</div>
 			</div>
 			<Editor
 				onMount={handleEditorDidMount}
 				onChange={handleEditorChange}
 				theme="vs-dark"
 				width="90vw"
-				height={consoleOpen ? '72vh' : '92vh'}
+				height={consoleOpen ? '71vh' : '92vh'}
 				defaultLanguage="javascript"
-				defaultValue={lesson.shell_code}
+				defaultValue={saveStatus.length > 0 ? saveStatus : lesson.shell_code}
 			/>
 			<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput}/>
 		</div>

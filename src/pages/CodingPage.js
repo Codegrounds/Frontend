@@ -8,9 +8,25 @@ function CodingPage({ lesson }) {
 
 	const editorRef = useRef(null);
 	const [consoleOpen, setConsoleOpen] = useState(true);
+	const [consoleOutput, setConsoleOutput] = useState('')
 
 	function handleEditorDidMount(editor, monaco) {
 		editorRef.current = editor;
+	}
+
+	async function updateConsole(response) {
+		if (response.status === 200) {
+			const body = await response.json()
+			if (body.data.stdOutput !== 'Unavailable') {
+				setConsoleOutput(consoleOutput.concat('Output >\n', body.data.stdOutput, '\n'))
+			}
+
+			if (body.data.stdError !== 'Unavailable') {
+				setConsoleOutput(consoleOutput.concat('Error >\n', body.data.stdError, '\n'))
+			}
+		} else {
+			console.log('Error fetching the API')
+		}
 	}
 
 	const runFile = async () => {
@@ -25,11 +41,7 @@ function CodingPage({ lesson }) {
 			}
 		})
 
-		if (response.status === 200) {
-			console.log(await response.json())
-		} else {
-			console.log('Error fetching the API')
-		}
+		updateConsole(response)
 	}
 
 	const testFile = async () => {
@@ -45,11 +57,7 @@ function CodingPage({ lesson }) {
 			}
 		})
 
-		if (response.status === 200) {
-			console.log(await response.json())
-		} else {
-			console.log('Error fetching the API')
-		}
+		updateConsole(response)
 	}
 
 	return (
@@ -71,7 +79,7 @@ function CodingPage({ lesson }) {
 				defaultLanguage="javascript"
 				defaultValue="// some comment"
 			/>
-			<Console open={consoleOpen} setOpen={setConsoleOpen} contents={"hi\nsup\nyo\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat"}/>
+			<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput}/>
 		</div>
 	);
 }

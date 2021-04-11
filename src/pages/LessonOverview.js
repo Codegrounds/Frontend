@@ -5,7 +5,7 @@ import { LessonsContext } from "codegrounds/state";
 
 function LessonOverview() {
 
-	const {chapters} = useContext(LessonsContext)
+	const { chapters } = useContext(LessonsContext)
 
 
 	return (

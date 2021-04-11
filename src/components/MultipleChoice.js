@@ -29,7 +29,7 @@ export function MultipleChoice() {
 					<div className="MultipleChoiceInnerContainer" onClick={() => Inside(i)}>
 						<div style={{
 							textDecoration: 'none', width: '100%', height: '100%',
-							borderRadius: '5px', justifyContent: 'center', alignItems: 'center', textAlign: "center",
+							borderRadius: '5px', textAlign: "center",
 							backgroundColor: (i != display || !clicked) ? '#646464' : (i == questions.correct) ? "#396b4c" : "#6b3939"
 						}}>
 							{que}

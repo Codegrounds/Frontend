@@ -94,6 +94,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
+	background-color: #646464 solid;
 }
 
 .LessonButtonInnerContainer {
@@ -114,7 +115,7 @@
 	justify-content: space-around;
 	align-items: center;
 	text-align: center;
-	margin-top: 20vh;
+	margin-top: 5vh;
 	padding: 10px
 }
 

@@ -1,7 +1,7 @@
 import 'codegrounds/styles/App.css';
 import React, { useContext } from "react";
 import { LessonsContext } from "codegrounds/state";
-import { LessonNavSidebar } from "codegrounds/components";
+import { LessonNavSidebar, MultipleChoice } from "codegrounds/components";
 import CodingPage from "./CodingPage";
 import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
@@ -11,7 +11,7 @@ import MDReactComponent from 'markdown-react-js';
 function LessonPage(props) {
 
 	const { lessonID } = props.match.params
-	const {lessons} = useContext(LessonsContext)
+	const { lessons } = useContext(LessonsContext)
 	const lesson = lessons[lessonID]
 
 	return lesson !== undefined ? (
@@ -20,7 +20,7 @@ function LessonPage(props) {
 				<LessonNavSidebar currentLessonID={lessonID} />
 
 
-				{lesson.type === 'code' ? <CodingPage lesson={lesson} /> :
+				{lesson.type === 'code' ? <CodingPage lesson={lesson} /> : lesson.type === 'mc' ? <MultipleChoice multipleChoice={lesson} /> :
 					<div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%' }}>
 						<div className="LessonHeader">
 							{lesson.name}

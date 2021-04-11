@@ -33,7 +33,7 @@ export function Loader(props) {
 
         let dict = {}
         for (const lessonID of lessonIDs) {
-            const res = await fetch('https://api-codegrounds.atale.me/v1/lesson?id=lesson_2')
+            const res = await fetch(`https://api-codegrounds.atale.me/v1/lesson?id=${lessonID}`)
             const body = await res.json()
 
             const data = body.data;

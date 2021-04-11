@@ -68,7 +68,7 @@ function CodingPage({ lesson }) {
 			body: JSON.stringify({
 				transaction_id: v4(),
 				code_data: editorRef.current.getValue(),
-				lesson_id: 'lesson_2'
+				lesson_id: lesson.id
 			}),
 			headers: {
 				'Content-Type': 'application/json'
@@ -84,7 +84,7 @@ function CodingPage({ lesson }) {
 			body: JSON.stringify({
 				transaction_id: v4(),
 				code_data: editorRef.current.getValue(),
-				lesson_id: 'lesson_2'
+				lesson_id: lesson.id
 			}),
 			headers: {
 				'Content-Type': 'application/json'
@@ -93,8 +93,8 @@ function CodingPage({ lesson }) {
 
 		if (response.status === 200) {
 			const data = await response.json()
-			if (data.validation === true) {
-				const submission = await fetch('https://codegrounds.tale.me:1000/editor/status', {
+			if (data.data.validation === true) {
+				const submission = await fetch('http://codegrounds.tale.me:1000/editor/status', {
 					method: 'POST',
 					credentials: 'include',
 					body: JSON.stringify({

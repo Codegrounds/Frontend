@@ -13,7 +13,7 @@ export const LessonsProvider = (props) => {
 		const dict = {}
 		nameList.forEach(lessonData => {
 			let id = toID(lessonData.name)
-			dict[id] = { name: lessonData.name, type: lessonData.type ? lessonData.type : 'lesson', page: generateLesson(lessonData.name) }
+			dict[id] = { name: lessonData.name, type: lessonData.type ? lessonData.type : 'lesson', markdown: generateLesson(lessonData.name) }
 		})
 		return dict;
 	}

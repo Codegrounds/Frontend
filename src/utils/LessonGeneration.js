@@ -1,25 +1,14 @@
-import React, {useContext} from "react";
 
 export function generateLesson(lessonName) {
 
     switch (lessonName) {
         case 'Lesson 1':
-            return (
-                <div>
-                    This is page 1
-                </div>
-            )
+            return `hi
+            
+            what is up`
         case 'Lesson 2':
-            return (
-                <div>
-                    This is page 2
-                </div>
-            )
+            return `s**u**p`
         default:
-            return (
-                <div>
-                    unfinished page
-                </div>
-            )
+            return `nothing to see here`
     }
 }

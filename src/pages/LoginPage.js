@@ -11,7 +11,7 @@ function LoginPage() {
 				{MultipleChoice}
 			</div>
 
-			<view className="LoginPageButtonContainer">
+			<div className="LoginPageButtonContainer">
 
 				<Link to="/overview" style={{ textDecoration: 'none' }}>
 					<text className="LoginPageButton">
@@ -26,7 +26,7 @@ function LoginPage() {
                     </div>
 				</Link>
 
-			</view>
+			</div>
 
 
 		</div>

@@ -273,3 +273,9 @@
 	height: 50px;
 	background-color: blue;
 }
+
+.LessonMarkdownPage {
+	width: 100%;
+	text-align: left;
+	white-space: break-spaces;
+}

@@ -6,6 +6,7 @@ import { GlobalProvider } from 'codegrounds/state';
 import LoginPage from "./LoginPage";
 import LessonOverview from "./LessonOverview";
 import { MultipleChoice } from '../components';
+import {LoginFields} from "./LoginFields";
 
 
 export function App() {
@@ -15,6 +16,7 @@ export function App() {
 				<Switch>
 
 					<Route path='/' exact component={LoginPage} />
+					<Route path='/login' exact component={LoginFields} />
 					<Route path='/overview' exact component={OverviewPage} />
 					<Route path='/lesson/:lessonID' component={LessonPage} />
 					<Route path='/lessons' exact component={LessonOverview} />

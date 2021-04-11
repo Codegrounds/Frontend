@@ -12,7 +12,7 @@ export function Console({contents, open, setOpen}) {
             {open ?
                 <div className="ConsoleTextArea">
                     {contents.split('\n').map(line => (
-                        <p>{line}</p>
+                        <p style={{margin: 0, padding: 0}}>{line}</p>
                     ))}
                 </div>
                 : null

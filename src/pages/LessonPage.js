@@ -11,7 +11,7 @@ import MDReactComponent from 'markdown-react-js';
 function LessonPage(props) {
 
 	const { lessonID } = props.match.params
-	const [lessons] = useContext(LessonsContext)
+	const {lessons} = useContext(LessonsContext)
 	const lesson = lessons[lessonID]
 
 	return (

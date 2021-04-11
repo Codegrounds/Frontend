@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export function LessonNavSidebar({ currentLessonID }) {
 
-	const [lessons] = useContext(LessonsContext)
+	const {lessons} = useContext(LessonsContext)
 
 	return (
 		<div className="LessonNavSidebar">

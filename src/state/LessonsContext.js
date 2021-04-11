@@ -13,18 +13,39 @@ export const LessonsProvider = (props) => {
 		const dict = {}
 		nameList.forEach(lessonData => {
 			let id = toID(lessonData.name)
-			dict[id] = { name: lessonData.name, type: lessonData.type ? lessonData.type : 'lesson', markdown: generateLesson(lessonData.name) }
+			dict[id] = { id, name: lessonData.name, chapter: lessonData.chapter, type: lessonData.type ? lessonData.type : 'lesson', markdown: generateLesson(lessonData.name) }
 		})
 		return dict;
 	}
 
-	const [lessons, setLessons] = useState(toDict([
-		{ name: 'Lesson 1' },
-		{ name: 'Lesson 2' },
-		{ name: 'Lesson 3' },
-		{ name: 'Debug', type: 'code' },
-		{ name: 'Unit Test' },
-	]))
+	const toChapters = (lessonsDict) => {
+		const dict = {}
+		Object.keys(lessonsDict).forEach(lessonID => {
+			let lessonData = lessonsDict[lessonID]
+			if (dict[lessonData.chapter] === undefined) {
+				dict[lessonData.chapter] = [lessonData]
+			} else {
+				dict[lessonData.chapter] = [...dict[lessonData.chapter], lessonData]
+			}
+		})
 
-	return <LessonsContext.Provider value={[lessons, setLessons]}>{props.children}</LessonsContext.Provider>;
+		return dict;
+	}
+
+	const lessonsDict = toDict([
+		{ name: 'Lesson 1', chapter: '1.1' },
+		{ name: 'Lesson 2', chapter: '1.1' },
+		{ name: 'Lesson 3', chapter: '1.1' },
+		{ name: 'Debug', chapter: '1.1', type: 'code' },
+		{ name: 'Unit Test', chapter: '1.1' },
+		{ name: 'Lesson 12', chapter: '1.2' },
+		{ name: 'Lesson 13', chapter: '1.2' },
+		{ name: 'Lesson 14', chapter: '1.2' },
+	]);
+
+	const [lessons, setLessons] = useState(lessonsDict)
+
+	const [chapters, setChapters] = useState(toChapters(lessonsDict))
+
+	return <LessonsContext.Provider value={{lessons, setLessons, chapters, setChapters}}>{props.children}</LessonsContext.Provider>;
 }

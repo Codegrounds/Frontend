@@ -14,7 +14,7 @@ function CodingPage({ lesson }) {
 	}
 
 	const runFile = async () => {
-		const response = await fetch('http://192.168.1.155:1000/runner/javascript', {
+		const response = await fetch('https://api-codegrounds.atale.me/v1/runner/javascript', {
 			method: 'POST',
 			body: JSON.stringify({
 				transaction_id: v4(),
@@ -26,7 +26,27 @@ function CodingPage({ lesson }) {
 		})
 
 		if (response.status === 200) {
-			console.log(response.json())
+			console.log(await response.json())
+		} else {
+			console.log('Error fetching the API')
+		}
+	}
+
+	const testFile = async () => {
+		const response = await fetch('https://api-codegrounds.atale.me/v1/validate/javascript', {
+			method: 'POST',
+			body: JSON.stringify({
+				transaction_id: v4(),
+				code_data: editorRef.current.getValue(),
+				lesson_id: 'lesson_2'
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+
+		if (response.status === 200) {
+			console.log(await response.json())
 		} else {
 			console.log('Error fetching the API')
 		}
@@ -40,7 +60,7 @@ function CodingPage({ lesson }) {
 				</div>
 				<div className="CodingTopButton" onClick={() => console.log('Save')}>Save</div>
 				<div className="CodingTopButton" onClick={runFile}>Run</div>
-				<div className="CodingTopButton" onClick={() => console.log('Test')}>Test</div>
+				<div className="CodingTopButton" onClick={testFile}>Test</div>
 				<div className="CodingTopButton" onClick={() => console.log('Submit')}>Submit</div>
 			</div>
 			<Editor

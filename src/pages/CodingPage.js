@@ -1,10 +1,13 @@
 import Editor from "@monaco-editor/react";
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { v4 } from 'uuid';
 import 'codegrounds/styles/App.css';
+import {Console} from "codegrounds/components";
 
 function CodingPage({ lesson }) {
+
 	const editorRef = useRef(null);
+	const [consoleOpen, setConsoleOpen] = useState(true);
 
 	function handleEditorDidMount(editor, monaco) {
 		editorRef.current = editor;
@@ -35,6 +38,7 @@ function CodingPage({ lesson }) {
 				<div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 					<p className="CodingHeader">{lesson.name}</p>
 				</div>
+				<div className="CodingTopButton" onClick={() => console.log('Save')}>Save</div>
 				<div className="CodingTopButton" onClick={runFile}>Run</div>
 				<div className="CodingTopButton" onClick={() => console.log('Test')}>Test</div>
 				<div className="CodingTopButton" onClick={() => console.log('Submit')}>Submit</div>
@@ -43,10 +47,11 @@ function CodingPage({ lesson }) {
 				onMount={handleEditorDidMount}
 				theme="vs-dark"
 				width="90vw"
-				height="95%"
+				height={consoleOpen ? '75vh' : '92vh'}
 				defaultLanguage="javascript"
 				defaultValue="// some comment"
 			/>
+			<Console open={consoleOpen} setOpen={setConsoleOpen} contents={"hi\nsup\nyo\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat\nwhat"}/>
 		</div>
 	);
 }

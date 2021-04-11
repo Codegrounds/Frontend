@@ -12,7 +12,7 @@ function LessonPage(props) {
 	const lesson = lessons[lessonID]
 
 	return (
-		<div className="LessonPage">
+		<div className="LessonPage" style={(lesson.type === 'code') ? {overflow: 'hidden'} : null}>
 
 			<div style={{ display: 'flex', flexDirection: 'row', width: '100%', height: '100%' }}>
 				<LessonNavSidebar currentLessonID={lessonID} />

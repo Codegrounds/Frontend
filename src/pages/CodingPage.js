@@ -5,6 +5,7 @@ import 'codegrounds/styles/App.css';
 import { Console, Tests } from "codegrounds/components";
 
 function CodingPage({ lesson }) {
+
 	const [tested, setTested] = useState(false)
 	const [testerValues, setTesterValues] = useState([])
 	const editorRef = useRef(null);

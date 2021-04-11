@@ -17,7 +17,7 @@ export function LessonNavSidebar({ currentLessonID }) {
 				</Link>
 			</div>
 			<Link to={'/logout/'}>
-				<h2 style={{ flex: 1, marginLeft: 'auto' }}>Logout</h2>
+				<h2 style={{ flex: 1, marginLeft: 'auto', textDecoration: 'none', color: 'white' }}>Logout</h2>
 			</Link>
 			{Object.keys(lessons).map(lessonID => (
 				<Link to={'/lesson/' + lessonID} key={lessonID+'-nav'}

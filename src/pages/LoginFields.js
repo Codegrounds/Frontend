@@ -40,21 +40,21 @@ export function LoginFields() {
 
 	return (
 		<div className="LoginPage">
-			<h1>
+			<h1 style={{color: 'white', fontSize: 40}}>
 				Log In
 			</h1>
 			<div className="LoginPageContainer">
 				<form onSubmit={handleSubmit}>
-					<div>
+					<div style={{display:'flex',flexDirection:'row', alignItems:'center', color: 'white'}}>
 						Username:
-                  		<input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+                  		<input className="LoginInput" type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
 					</div>
-					<div>
+					<div style={{color:'white'}}>
 						Password:
-                    	<input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    	<input className="LoginInput" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 					</div>
 
-					<input type="submit" value="Submit" style={{ width: '60%', height: '30%' }} />
+					<input className="LoginSubmit" type="submit" value="Submit" />
 				</form>
 
 			</div>

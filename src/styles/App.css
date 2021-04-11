@@ -310,6 +310,28 @@
 
 }
 
+.LoginInput {
+	width: 15vw;
+	height: 40px;
+	border-radius: 10px;
+	border: None;
+	margin-left: 5px;
+	padding-left: 15px;
+	font-size: 20px;
+}
+
+.LoginSubmit {
+	background-color: #68a8e0;
+	color: white;
+	border-radius: 10px;
+	border: None;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 20px;
+	margin-top: 40px;
+	cursor: pointer;
+}
+
 .LessonMarkdownPage {
 	width: 100%;
 	text-align: left;
@@ -317,6 +339,7 @@
 	padding-left: 10%;
 
 	font-size: 18px;
+	color: white;
 }
 
 .Tests {
@@ -333,7 +356,7 @@
 	display: flex;
 	width: 100%;
 	height: 100%;
-	
+
 	background-color: #454a4a;
 	border-radius: 5;
 	flex-direction: column;

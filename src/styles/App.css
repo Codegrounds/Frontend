@@ -289,12 +289,15 @@
 	font-size: large;
 	border-bottom-width: 10px;
 	border-color: black;
-	
-	
+
+
 }
 
 .LessonMarkdownPage {
 	width: 100%;
 	text-align: left;
-	white-space: break-spaces;
+
+	padding-left: 10%;
+
+	font-size: 18px;
 }

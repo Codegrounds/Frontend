@@ -2,13 +2,14 @@ import Editor from "@monaco-editor/react";
 import React, { useRef, useState, useEffect } from 'react';
 import { v4 } from 'uuid';
 import 'codegrounds/styles/App.css';
-import {Console} from "codegrounds/components";
+import { Console } from "codegrounds/components";
 
 function CodingPage({ lesson }) {
 
 	const editorRef = useRef(null);
 	const scrollDownConsole = useRef(null);
 	const [consoleOpen, setConsoleOpen] = useState(false);
+	const [testOpen, setTestOpen] = useState(false);
 	const [consoleOutput, setConsoleOutput] = useState('')
 	const [submittedStatus, setSubmittedStatus] = useState(false)
 
@@ -163,16 +164,21 @@ function CodingPage({ lesson }) {
 				<div className="CodingTopButton" onClick={testFile}>Test</div>
 				<div className="CodingTopButton" onClick={submitFile} style={submittedStatus ? { backgroundColor: '#11ff11' } : null}>{submittedStatus ? 'Submitted' : 'Submit'}</div>
 			</div>
-			<Editor
-				onMount={handleEditorDidMount}
-				onChange={handleEditorChange}
-				theme="vs-dark"
-				width="90vw"
-				height={consoleOpen ? '71vh' : '92vh'}
-				defaultLanguage="javascript"
-				defaultValue={lesson.shell_code}
-			/>
-			<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput} scrollDown={scrollDownConsole}/>
+			<div className="RightBar">
+				<div className="IDE">
+					<Editor
+						onMount={handleEditorDidMount}
+						onChange={handleEditorChange}
+						theme="vs-dark"
+						width={testOpen ? "75vw" : "90vw"}
+						height={consoleOpen ? '71vh' : '92vh'}
+						defaultLanguage="javascript"
+						defaultValue={lesson.shell_code}
+					/>
+					<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput} scrollDown={scrollDownConsole} />
+				</div>
+				<Tests open={testOpen} setOpen={setTestOpen} />
+			</div>
 		</div>
 	);
 }

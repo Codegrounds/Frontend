@@ -217,7 +217,7 @@
 }
 
 .ConsoleTextArea {
-	width: 100%;
+	width: 72.9vw;
 	height: 20vh;
 	background-color: #313434;
 
@@ -307,37 +307,37 @@
 .Tests {
 
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: flex-end;
-	margin-right: 20px;
+	width: 20vw;
 
 }
 
 .TestsContainer {
 
 	display: flex;
-	width: 25%;
-	height: 50vh;
-	margin-top: 25vh;
-	background-color: #646464;
+	width: 100%;
+	height: 100%;
+	
+	background-color: #454a4a;
 	border-radius: 5;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
-	border-radius: 5px;
+	justify-content: flex-start;
 
 }
 
 .CheckContainer {
 
 	display: flex;
-	height: 18%;
+	height: 7vh;
 	width: 97%;
 	background-color: #313434;
 	align-items: center;
 	justify-content: center;
 	color: white;
 	border-radius: 5px;
+	margin-top: 1vh;
 }
 
 .CheckText {
@@ -349,4 +349,24 @@
 	align-items: center;
 	justify-content: center;
 
+}
+
+.IDE {
+
+	display: flex;
+	flex-direction: column;
+}
+
+.RightBar {
+
+	display: flex;
+	flex-direction: row;
+}
+
+.RightButton {
+	background-color: white;
+	width: 75%;
+	height: 5vh;
+	border-radius: 10px;
+	margin-top: 1vh;
 }

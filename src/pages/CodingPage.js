@@ -7,7 +7,7 @@ import {Console} from "codegrounds/components";
 function CodingPage({ lesson }) {
 
 	const editorRef = useRef(null);
-	const [consoleOpen, setConsoleOpen] = useState(true);
+	const [consoleOpen, setConsoleOpen] = useState(false);
 	const [consoleOutput, setConsoleOutput] = useState('')
 
 	function handleEditorDidMount(editor, monaco) {

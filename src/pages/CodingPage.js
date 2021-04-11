@@ -14,6 +14,22 @@ function CodingPage({ lesson }) {
 		editorRef.current = editor;
 	}
 
+	async function handleEditorChange(value, event) {
+		const response = await fetch('http://codegrounds.tale.me:1000/editor/save', {
+			method: 'POST',
+			credentials: 'include',
+			body: JSON.stringify({
+				lesson_id: lesson.id,
+				code_data: value ? value : editorRef.current.getValue()
+			}),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+
+		console.log(response)
+	}
+
 	async function updateConsole(response) {
 		if (response.status === 200) {
 			const body = await response.json()
@@ -30,6 +46,7 @@ function CodingPage({ lesson }) {
 	}
 
 	const runFile = async () => {
+		setConsoleOutput(consoleOutput.concat(`[${new Date().toLocaleTimeString()}] Running File >\n`))
 		const response = await fetch('https://api-codegrounds.atale.me/v1/runner/javascript', {
 			method: 'POST',
 			body: JSON.stringify({
@@ -41,10 +58,11 @@ function CodingPage({ lesson }) {
 			}
 		})
 
-		updateConsole(response)
+		await updateConsole(response)
 	}
 
 	const testFile = async () => {
+		setConsoleOutput(consoleOutput.concat(`[${new Date().toLocaleTimeString()}] Testing File >\n`))
 		const response = await fetch('https://api-codegrounds.atale.me/v1/validate/javascript', {
 			method: 'POST',
 			body: JSON.stringify({
@@ -57,7 +75,7 @@ function CodingPage({ lesson }) {
 			}
 		})
 
-		updateConsole(response)
+		await updateConsole(response)
 	}
 
 	return (
@@ -66,13 +84,13 @@ function CodingPage({ lesson }) {
 				<div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 					<p className="CodingHeader">{lesson.name}</p>
 				</div>
-				<div className="CodingTopButton" onClick={() => console.log('Save')}>Save</div>
 				<div className="CodingTopButton" onClick={runFile}>Run</div>
 				<div className="CodingTopButton" onClick={testFile}>Test</div>
 				<div className="CodingTopButton" onClick={() => console.log('Submit')}>Submit</div>
 			</div>
 			<Editor
 				onMount={handleEditorDidMount}
+				onChange={handleEditorChange}
 				theme="vs-dark"
 				width="90vw"
 				height={consoleOpen ? '72vh' : '92vh'}

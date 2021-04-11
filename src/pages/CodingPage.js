@@ -14,13 +14,20 @@ function CodingPage({ lesson }) {
 	const [consoleOutput, setConsoleOutput] = useState('')
 	const [submittedStatus, setSubmittedStatus] = useState(false)
 
+	const [shellCode, setShellCode] = useState('')
+
 	useEffect(async () => {
 		const statusResult = await fetch(`https://codegrounds.atale.me/v1/editor/status?id=${lesson.id}`, {
 			credentials: 'include',
 		})
 
 		const statusJson = await statusResult.json()
-		setSubmittedStatus(statusJson.data.status)
+		if (statusJson.data.status === 'completed') {
+			setSubmittedStatus(true)
+		}
+
+		setShellCode(lesson.shell_code)
+		console.log(submittedStatus)
 	});
 
 	async function handleEditorDidMount(editor, monaco) {
@@ -29,7 +36,7 @@ function CodingPage({ lesson }) {
 		})
 
 		const saveJson = await saveResult.json()
-		editor.setValue(saveJson.data.status)
+		editor.setValue(saveJson.data.status ? saveJson.data.status : shellCode)
 		editorRef.current = editor;
 	}
 
@@ -186,13 +193,14 @@ function CodingPage({ lesson }) {
 			<div className="RightBar">
 				<div className="IDE">
 					<Editor
+						key={lesson.id}
 						onMount={handleEditorDidMount}
 						onChange={handleEditorChange}
 						theme="vs-dark"
 						width={testOpen ? "75vw" : "90vw"}
 						height={consoleOpen ? '71vh' : '92vh'}
 						defaultLanguage="javascript"
-						defaultValue={lesson.shell_code}
+						defaultValue={shellCode ? shellCode : lesson.shell_code}
 					/>
 					<Console open={consoleOpen} setOpen={setConsoleOpen} contents={consoleOutput} scrollDown={scrollDownConsole} />
 				</div>
